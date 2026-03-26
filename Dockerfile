@@ -14,6 +14,7 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt && rm /tmp/requirements.
 # Copy source code
 COPY models.py /app/models.py
 COPY server/ /app/server/
+COPY baseline/ /app/baseline/
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
