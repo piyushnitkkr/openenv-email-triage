@@ -18,10 +18,10 @@ COPY baseline/ /app/baseline/
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD curl -f http://localhost:8000/ || exit 1
+    CMD curl -f http://localhost:7860/ || exit 1
 
-# Expose port (HF Spaces maps this to 7860 externally)
-EXPOSE 8000
+# Expose port 7860 (required by HF Spaces)
+EXPOSE 7860
 
 # Run the server
-CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "7860"]
