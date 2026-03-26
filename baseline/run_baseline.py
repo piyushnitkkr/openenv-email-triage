@@ -232,6 +232,14 @@ def main() -> None:
 
     print(f"\n  Overall mean: {sum(r['episode_score'] for r in results)/len(results):.4f}")
     print(f"{'='*60}\n")
+    
+    # Save for the API endpoint to read
+    with open("baseline_results.json", "w") as f:
+        json.dump({
+            "scores": results,
+            "mean_score": sum(r['episode_score'] for r in results)/len(results)
+        }, f)
+
 
 
 if __name__ == "__main__":

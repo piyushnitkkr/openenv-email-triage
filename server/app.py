@@ -137,6 +137,45 @@ def get_state() -> dict[str, Any]:
     return env.state
 
 
+class BaselineResponse(BaseModel):
+    scores: list[dict[str, Any]]
+    mean_score: float
+
+
+@app.get("/baseline", response_model=BaselineResponse, summary="Trigger baseline inference script")
+def run_baseline_script() -> BaselineResponse:
+    import subprocess
+    import json
+    import os
+
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        raise HTTPException(status_code=500, detail="OPENAI_API_KEY not set in environment")
+        
+    try:
+        # Run the baseline script inside a subprocess
+        result = subprocess.run(
+            [sys.executable, "baseline/run_baseline.py", "--base-url", "http://localhost:8000"],
+            capture_output=True,
+            text=True,
+            timeout=120
+        )
+        
+        # Read the dumped JSON scores
+        if os.path.exists("baseline_results.json"):
+            with open("baseline_results.json", "r") as f:
+                data = json.load(f)
+            return BaselineResponse(scores=data["scores"], mean_score=data["mean_score"])
+        else:
+            raise HTTPException(status_code=500, detail=f"Baseline script failed or produced no output. Stderr: {result.stderr}")
+            
+    except subprocess.TimeoutExpired:
+        raise HTTPException(status_code=504, detail="Baseline script timed out")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
 @app.post("/grader", response_model=GraderResponse, summary="Grade an episode from history")
 def grade_episode(request: GraderRequest) -> GraderResponse:
     """
