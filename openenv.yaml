@@ -1,0 +1,56 @@
+name: email-triage
+version: 1.0.0
+description: >
+  An OpenEnv environment where an agent reads, categorizes, prioritizes,
+  and responds to emails in a realistic inbox. Three tasks of increasing
+  difficulty: classification (easy), inbox prioritization (medium), and
+  reply drafting (hard).
+
+tasks:
+  - id: classify
+    difficulty: easy
+    description: "Classify each email into one of 4 categories: spam, urgent, normal, newsletter"
+    max_steps: 10
+    expected_score_range: [0.70, 0.90]
+
+  - id: prioritize
+    difficulty: medium
+    description: "Rank 10 emails by urgency; scored by normalized Kendall tau distance"
+    max_steps: 1
+    expected_score_range: [0.40, 0.65]
+
+  - id: reply
+    difficulty: hard
+    description: "Draft a reply to a complex multi-turn email thread; scored by rubric matching"
+    max_steps: 1
+    expected_score_range: [0.20, 0.50]
+
+observation_space:
+  email_id: string
+  subject: string
+  sender: string
+  body: string
+  thread_history: list[string]
+  inbox_context: list[object]
+  step_number: integer
+  task_id: string
+
+action_space:
+  action_type:
+    type: string
+    enum: [classify, prioritize, reply]
+  label:
+    type: string
+    enum: [spam, urgent, normal, newsletter]
+    description: "Required for classify action"
+  priority_order:
+    type: list[string]
+    description: "Ordered list of email_ids for prioritize action"
+  reply_text:
+    type: string
+    description: "Drafted reply text for reply action"
+  reasoning:
+    type: string
+    description: "Optional reasoning string"
+
+reward_range: [0.0, 1.0]

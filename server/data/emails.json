@@ -1,0 +1,454 @@
+[
+  {
+    "id": "email_001",
+    "subject": "CONGRATULATIONS! You've won $1,000,000!",
+    "sender": "noreply@prize-winners.biz",
+    "timestamp": "2024-01-15T08:12:00Z",
+    "body": "Dear Lucky Winner,\n\nYou have been selected as our grand prize winner! Click the link below to claim your $1,000,000 prize. This offer expires in 24 hours. Provide your bank details to receive your winnings.\n\nClaim now: http://prize-winners.biz/claim?id=XYZ",
+    "thread_history": [],
+    "ground_truth_label": "spam",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_002",
+    "subject": "Production server is DOWN — immediate action required",
+    "sender": "alerts@company-infra.io",
+    "timestamp": "2024-01-15T09:05:00Z",
+    "body": "CRITICAL ALERT\n\nThe production API server (api.company.com) has been unreachable for the past 8 minutes. Error rate is at 100%. All customer-facing services are affected.\n\nOn-call engineer: Please check PagerDuty and respond immediately.\n\nIncident ID: INC-2024-0115-001",
+    "thread_history": [],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 1,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_003",
+    "subject": "Monthly Newsletter — January 2024 Product Updates",
+    "sender": "newsletter@saas-product.com",
+    "timestamp": "2024-01-15T07:00:00Z",
+    "body": "Hi there,\n\nHappy New Year! Here's what's new in January:\n- Redesigned dashboard UI\n- 2x faster report generation\n- New integrations: Slack, Teams, Notion\n\nRead the full changelog: https://saas-product.com/changelog\n\nUnsubscribe | Manage preferences",
+    "thread_history": [],
+    "ground_truth_label": "newsletter",
+    "ground_truth_priority": 9,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_004",
+    "subject": "RE: Invoice #INV-2024-0089 — Charge Dispute",
+    "sender": "sarah.chen@clientcorp.com",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "body": "Hi Support Team,\n\nI'm writing to dispute the charge of $2,450 on Invoice #INV-2024-0089, dated January 10th. We cancelled our subscription on December 28th and received a confirmation email (attached), yet we were still billed for January.\n\nPlease process a full refund to the card on file. I expect this resolved within 3 business days or I will initiate a chargeback.\n\nRegards,\nSarah Chen\nFinance Manager, ClientCorp",
+    "thread_history": [
+      "From: billing@company.com\nDate: Jan 10, 2024\nSubject: Invoice #INV-2024-0089\n\nDear Sarah Chen,\n\nPlease find attached Invoice #INV-2024-0089 for $2,450 for your January subscription.\n\nPayment is due January 20th.\n\nThank you,\nBilling Team"
+    ],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 2,
+    "task_relevance": [1, 2, 3]
+  },
+  {
+    "id": "email_005",
+    "subject": "Team lunch this Friday — any dietary restrictions?",
+    "sender": "derek.johnson@company.com",
+    "timestamp": "2024-01-15T11:15:00Z",
+    "body": "Hey everyone,\n\nWe're doing a team lunch this Friday at noon. Planning to go to The Green Fork (it's vegetarian-friendly).\n\nPlease reply if you have dietary restrictions or allergies.\n\nCheers,\nDerek",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 8,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_006",
+    "subject": "URGENT: Legal hold notice — do not delete any files",
+    "sender": "legal@company.com",
+    "timestamp": "2024-01-15T09:45:00Z",
+    "body": "All Employees,\n\nThis is an official legal hold notice. Effective immediately, you must preserve all documents, emails, and electronic files related to the Johnson v. Company matter.\n\nDo NOT delete, modify, or transfer any relevant materials. Failure to comply may result in severe legal consequences.\n\nContact the Legal team at legal@company.com with any questions.\n\n— Legal Department",
+    "thread_history": [],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 3,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_007",
+    "subject": "Your weekly digest from ProductHunt",
+    "sender": "digest@producthunt.com",
+    "timestamp": "2024-01-15T06:00:00Z",
+    "body": "This week's top products:\n\n1. AI Writing Assistant — 2.3k upvotes\n2. NoCode Database Builder — 1.8k upvotes\n3. Meeting Summarizer Pro — 1.5k upvotes\n\nExplore all products: https://producthunt.com/digest\n\nYou're receiving this because you subscribed to weekly digests.",
+    "thread_history": [],
+    "ground_truth_label": "newsletter",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_008",
+    "subject": "Performance review — schedule your 1:1 with HR",
+    "sender": "priya.sharma@company.com",
+    "timestamp": "2024-01-15T10:00:00Z",
+    "body": "Hi,\n\nAnnual performance reviews are coming up. Please schedule your 30-minute 1:1 using the link below before January 22nd. Come prepared to discuss your achievements, goals, and any feedback.\n\nSchedule: https://calendly.com/hr-reviews\n\nBest,\nPriya Sharma\nHR Manager",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 6,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_009",
+    "subject": "Bug Report: Login page crashes on mobile Safari",
+    "sender": "marcus.lee@clientcorp.com",
+    "timestamp": "2024-01-15T11:50:00Z",
+    "body": "Hi Support,\n\nOur users are reporting that the login page crashes immediately on mobile Safari (iOS 17). This is affecting approximately 30% of our user base.\n\nSteps to reproduce:\n1. Open the app on iPhone with Safari\n2. Enter credentials\n3. Tap 'Login' — app crashes\n\nDevice: iPhone 14 Pro, iOS 17.2\nBrowser: Safari 17\n\nThis needs to be fixed ASAP — we have a demo for a major client tomorrow morning.\n\nMarcus Lee, CTO",
+    "thread_history": [],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 4,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_010",
+    "subject": "Invite: All-hands meeting Q1 Planning — Jan 22 @ 2pm",
+    "sender": "calendar@company.com",
+    "timestamp": "2024-01-15T08:00:00Z",
+    "body": "You're invited to the Q1 Planning All-hands.\n\nDate: Monday, January 22nd, 2:00 PM – 3:30 PM\nLocation: Main Conference Room / Zoom\nAgenda: Q4 results review, Q1 OKRs, team announcements\n\nPlease RSVP by Friday.\n\n— Office of the CEO",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 7,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_011",
+    "subject": "Your Amazon order has shipped",
+    "sender": "shipment-tracking@amazon.com",
+    "timestamp": "2024-01-15T07:30:00Z",
+    "body": "Your order #112-3456789-0001 has shipped!\n\nTracking number: 1Z999AA10123456784\nExpected delivery: January 17th\n\nTrack your package: https://amazon.com/track\n\nThank you for shopping with Amazon.",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_012",
+    "subject": "FINAL WARNING: Your account will be suspended",
+    "sender": "security@paypa1-secure.net",
+    "timestamp": "2024-01-15T09:00:00Z",
+    "body": "Dear Customer,\n\nWe detected suspicious activity on your account. Your account will be suspended in 24 hours unless you verify your information.\n\nClick here to verify: http://paypa1-secure.net/verify?token=abc123\n\nDo not ignore this message!",
+    "thread_history": [],
+    "ground_truth_label": "spam",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_013",
+    "subject": "Database migration scheduled for Saturday 2am",
+    "sender": "devops@company.com",
+    "timestamp": "2024-01-15T12:00:00Z",
+    "body": "Hi team,\n\nWe're scheduling a database migration this Saturday at 2am UTC. Expected downtime: 45 minutes.\n\nWhat's changing:\n- PostgreSQL upgrade from 14 to 16\n- New indexing strategy on user_events table\n- Archive old logs to cold storage\n\nPlease ensure no critical batch jobs are scheduled between 2am–4am Saturday.\n\nDevOps Team",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 5,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_014",
+    "subject": "Re: RE: Invoice Dispute — ESCALATION",
+    "sender": "james.wright@clientcorp.com",
+    "timestamp": "2024-01-15T14:00:00Z",
+    "body": "This is unacceptable. I'm escalating to the VP level.\n\nWe have been waiting 5 business days for a refund confirmation on Invoice #INV-2024-0089. Sarah sent the original dispute on January 10th. Nobody has responded.\n\nIf we do not receive a written refund confirmation by end of business today, we will contact our legal team and terminate our annual contract ($120,000/year).\n\nJames Wright\nVP Finance, ClientCorp",
+    "thread_history": [
+      "From: sarah.chen@clientcorp.com\nDate: Jan 10, 2024\nSubject: Invoice #INV-2024-0089 — Charge Dispute\n\nI'm writing to dispute the charge of $2,450 on Invoice #INV-2024-0089. We cancelled our subscription on December 28th...",
+      "From: billing@company.com\nDate: Jan 11, 2024\nSubject: RE: Invoice Dispute\n\nThank you for reaching out. We are reviewing your request and will respond within 3-5 business days."
+    ],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 1,
+    "task_relevance": [1, 2, 3]
+  },
+  {
+    "id": "email_015",
+    "subject": "Webinar Recap: AI in Enterprise — 5 Key Takeaways",
+    "sender": "content@tech-insights.com",
+    "timestamp": "2024-01-15T06:30:00Z",
+    "body": "Hi there,\n\nMissed last week's webinar? Here are the 5 key takeaways from 'AI in Enterprise 2024':\n\n1. RAG is the dominant architecture for enterprise LLMs\n2. Fine-tuning costs have dropped 80% in 12 months\n3. Compliance remains the #1 barrier to adoption\n4. Agentic workflows saw 3x growth in Q4 2023\n5. Open-source models closing the gap on GPT-4\n\nFull recording: https://tech-insights.com/webinar-recap",
+    "thread_history": [],
+    "ground_truth_label": "newsletter",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_016",
+    "subject": "Offer letter — Software Engineer Position",
+    "sender": "recruiting@company.com",
+    "timestamp": "2024-01-15T10:45:00Z",
+    "body": "Dear Alex Nguyen,\n\nWe're thrilled to offer you the position of Software Engineer at Company Inc.!\n\nYour offer:\n- Base salary: $145,000/year\n- Equity: 0.05% (4-year vest, 1-year cliff)\n- Start date: February 5th, 2024\n\nPlease sign and return the attached offer letter by January 19th.\n\nWelcome to the team!\n\nTalent Acquisition",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 4,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_017",
+    "subject": "Exclusive deal: 70% off Premium Plan — Today Only!",
+    "sender": "deals@spammy-saas.click",
+    "timestamp": "2024-01-15T08:45:00Z",
+    "body": "FLASH SALE — 70% OFF!\n\nUpgrade to Premium and unlock:\n✓ Unlimited users\n✓ AI-powered everything\n✓ 24/7 support\n\nOffer expires TONIGHT at midnight. Use code: FLASH70\n\nThis is NOT spam. You subscribed to our marketing list.",
+    "thread_history": [],
+    "ground_truth_label": "spam",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_018",
+    "subject": "Code review requested: PR #847 — auth refactor",
+    "sender": "github-noreply@github.com",
+    "timestamp": "2024-01-15T11:00:00Z",
+    "body": "elena.petrov requested your review on PR #847.\n\nTitle: Refactor authentication middleware to use JWT RS256\nFiles changed: 12\nAdditions: 284, Deletions: 156\n\nView PR: https://github.com/company/backend/pull/847\n\n— GitHub",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 7,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_019",
+    "subject": "HR: Report of workplace harassment — CONFIDENTIAL",
+    "sender": "anonymous@company-hr-portal.com",
+    "timestamp": "2024-01-15T13:00:00Z",
+    "body": "CONFIDENTIAL — HR REPORT\n\nI am submitting an anonymous report of workplace harassment by a senior manager in the Engineering department. Over the past 3 months, I have witnessed repeated verbal intimidation and inappropriate comments.\n\nI have documented 6 specific incidents with dates and witnesses. I am requesting an immediate investigation per company policy Section 4.2.\n\nI am afraid of retaliation which is why I am submitting anonymously.",
+    "thread_history": [],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 2,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_020",
+    "subject": "Your trial expires in 3 days",
+    "sender": "noreply@toolbox-app.com",
+    "timestamp": "2024-01-15T09:30:00Z",
+    "body": "Hi there,\n\nYour free trial of Toolbox Pro expires in 3 days (January 18th).\n\nUpgrade to keep access to:\n- Automated workflows\n- Team collaboration\n- Advanced analytics\n\nUpgrade now: https://toolbox-app.com/upgrade\n\nIf you don't upgrade, your data will be retained for 30 days.",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 9,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_021",
+    "subject": "URGENT: Board meeting materials needed by 3pm TODAY",
+    "sender": "ceo@company.com",
+    "timestamp": "2024-01-15T12:30:00Z",
+    "body": "Team,\n\nI need the Q4 financial summary, product roadmap slides, and headcount projections on my desk by 3pm today for the board meeting.\n\nThis is non-negotiable. Please confirm receipt and ETA.\n\n— CEO",
+    "thread_history": [],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 1,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_022",
+    "subject": "Claim your FREE iPhone 15 Pro!",
+    "sender": "promo@freephonesgiveaway.info",
+    "timestamp": "2024-01-15T07:15:00Z",
+    "body": "You've been pre-selected!\n\nComplete a short survey to claim your FREE iPhone 15 Pro. Only 3 spots left!\n\nSurvey takes 2 minutes: http://freephonesgiveaway.info/survey?ref=EMAIL\n\nOffer valid for 48 hours only.",
+    "thread_history": [],
+    "ground_truth_label": "spam",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_023",
+    "subject": "RE: Onboarding — missing access to production systems",
+    "sender": "carlos.mendez@company.com",
+    "timestamp": "2024-01-15T10:15:00Z",
+    "body": "Hi IT,\n\nIt's been 3 days since I joined and I still don't have access to:\n- GitHub organization (company)\n- AWS console\n- Datadog dashboards\n- Slack #engineering channel\n\nI can't do my job without these. My manager (Tom Bradley) already submitted the access request tickets last Monday.\n\nTicket IDs: IT-1234, IT-1235, IT-1236\n\nCarlos Mendez, Senior Engineer",
+    "thread_history": [
+      "From: hr@company.com\nDate: Jan 12, 2024\nSubject: Onboarding — Access Request\n\nPlease provision access for Carlos Mendez (Start date: Jan 13). Manager: Tom Bradley. Role: Senior Engineer."
+    ],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 5,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_024",
+    "subject": "The Developer Digest — Issue #52",
+    "sender": "digest@developerweekly.io",
+    "timestamp": "2024-01-15T06:00:00Z",
+    "body": "Developer Weekly, Issue #52\n\nThis week in tech:\n• Rust surpasses Go in developer surveys\n• React 19 RC released\n• OpenAI launches GPT-5 preview\n• Kubernetes 1.30 released\n\nSponsored by: CloudFast — Deploy faster with zero downtime.\n\nRead more: https://developerweekly.io/52",
+    "thread_history": [],
+    "ground_truth_label": "newsletter",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_025",
+    "subject": "Expense report #ER-2024-089 needs approval",
+    "sender": "finance-system@company.com",
+    "timestamp": "2024-01-15T11:30:00Z",
+    "body": "An expense report requires your approval.\n\nSubmitted by: Yuki Tanaka\nAmount: $347.50\nCategory: Travel (conference)\nEvent: SREcon 2024, Boston\n\nView and approve: https://finance.company.com/approve/ER-2024-089\n\nThis report has been pending for 2 days.",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 8,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_026",
+    "subject": "You're invited: Birthday celebration for Mike — Friday 5pm",
+    "sender": "sofia.rodriguez@company.com",
+    "timestamp": "2024-01-15T10:00:00Z",
+    "body": "Hi all,\n\nLet's celebrate Mike's birthday this Friday at 5pm in the office kitchen!\n\nWe'll have cake and drinks. RSVP by Thursday so we can order the right amount of food.\n\nSee you there!\nSofia",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_027",
+    "subject": "Security alert: Login from unrecognized device",
+    "sender": "security@company.com",
+    "timestamp": "2024-01-15T13:30:00Z",
+    "body": "Security Alert\n\nWe detected a login to your company account from an unrecognized device.\n\nDevice: Windows PC, Chrome browser\nLocation: Lagos, Nigeria\nTime: January 15, 2024 at 8:28 AM UTC\n\nIf this was not you, please reset your password immediately and contact security@company.com.\n\nIf this was you, no action is needed.",
+    "thread_history": [],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 3,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_028",
+    "subject": "Product feedback requested — 2-min survey",
+    "sender": "feedback@company.com",
+    "timestamp": "2024-01-15T09:00:00Z",
+    "body": "Hi,\n\nWe're working to improve our product and would love your feedback.\n\nThis 2-minute survey asks about your experience with our dashboard and reporting features.\n\nTake survey: https://company.com/feedback/jan2024\n\nAs a thank-you, you'll get 10% off your next renewal.\n\nThanks for your time!\nProduct Team",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_029",
+    "subject": "RE: Billing Dispute Follow-Up — Account #AC-9087",
+    "sender": "sarah.chen@clientcorp.com",
+    "timestamp": "2024-01-15T15:00:00Z",
+    "body": "I have not received any response to my dispute filed 5 days ago.\n\nThis is my final communication before I initiate a chargeback through our bank. The disputed amount is $2,450 on Invoice #INV-2024-0089.\n\nWe have a cancellation confirmation from December 28th. This charge is fraudulent.\n\nSarah Chen\nFinance Manager, ClientCorp\nPhone: +1-555-0142",
+    "thread_history": [
+      "From: sarah.chen@clientcorp.com\nDate: Jan 10, 2024\nSubject: Invoice #INV-2024-0089 — Charge Dispute\n\nDear Support Team, I'm writing to dispute the charge of $2,450 on Invoice #INV-2024-0089. We cancelled our subscription on December 28th...",
+      "From: billing@company.com\nDate: Jan 11, 2024\nSubject: RE: Invoice Dispute\n\nThank you for reaching out. We are reviewing your request and will respond within 3-5 business days."
+    ],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 1,
+    "task_relevance": [1, 2, 3]
+  },
+  {
+    "id": "email_030",
+    "subject": "New blog post: 10 productivity hacks for remote teams",
+    "sender": "blog@remotework-weekly.com",
+    "timestamp": "2024-01-15T07:45:00Z",
+    "body": "New post alert!\n\n'10 Productivity Hacks for Remote Teams in 2024'\n\nHighlights:\n1. Async-first communication\n2. Time-boxing sprints\n3. The Pomodoro Technique for distributed teams\n...\n\nRead the full post: https://remotework-weekly.com/10-hacks\n\nUnsubscribe | View in browser",
+    "thread_history": [],
+    "ground_truth_label": "newsletter",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_031",
+    "subject": "Contract renewal — action required before Jan 31",
+    "sender": "contracts@vendor-saas.com",
+    "timestamp": "2024-01-15T09:15:00Z",
+    "body": "Hi,\n\nYour annual contract with VendorSaaS expires on January 31st.\n\nTo ensure uninterrupted service, please sign the renewal agreement by January 28th.\n\nContract highlights:\n- $18,000/year (no price increase)\n- 2-year term\n- SLA: 99.9% uptime\n\nSign here: https://vendor-saas.com/renew/AC-9087\n\nQuestions? Contact your account manager: kim@vendor-saas.com",
+    "thread_history": [],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 4,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_032",
+    "subject": "WORK FROM HOME JOBS — $500/day, no experience needed!",
+    "sender": "jobs@easy-money-online.xyz",
+    "timestamp": "2024-01-15T06:45:00Z",
+    "body": "Hi Friend,\n\nEarn $500/day from home! No experience, no resume, no interviews.\n\nJust follow our simple 3-step system:\n1. Sign up (free!)\n2. Watch 2 videos\n3. Get paid!\n\nStart now: http://easy-money-online.xyz/start\n\nLimited spots available!",
+    "thread_history": [],
+    "ground_truth_label": "spam",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_033",
+    "subject": "Q4 2023 retrospective — your input needed",
+    "sender": "tom.bradley@company.com",
+    "timestamp": "2024-01-15T11:00:00Z",
+    "body": "Team,\n\nAs we kick off Q1, I'd like to gather everyone's input on Q4. Please take 10 minutes to fill out the retrospective form — what went well, what didn't, and what we should stop/start/continue.\n\nForm: https://forms.company.com/retro-q4-2023\nDeadline: January 19th\n\nYour feedback helps shape how we work better in 2024.\n\nTom",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 7,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_034",
+    "subject": "Your cloud bill increased 340% — investigation needed",
+    "sender": "billing@aws.amazon.com",
+    "timestamp": "2024-01-15T08:30:00Z",
+    "body": "AWS Billing Alert\n\nYour estimated AWS charges for January are significantly higher than previous months.\n\nCurrently estimated: $47,230\nSame period last month: $10,540\nIncrease: 348%\n\nTop cost drivers:\n- EC2 (us-east-1): $29,000\n- Data Transfer: $12,000\n- RDS: $6,230\n\nReview your usage: https://console.aws.amazon.com/billing/\n\nThis alert was triggered by your cost anomaly detection threshold.",
+    "thread_history": [],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 2,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_035",
+    "subject": "Industry Report: State of DevOps 2024 — Free Download",
+    "sender": "reports@devops-research.org",
+    "timestamp": "2024-01-15T07:00:00Z",
+    "body": "The State of DevOps Report 2024 is here!\n\nKey findings:\n- Elite performers deploy 1,460× more frequently\n- DORA metrics adoption up 60%\n- Platform engineering teams are 2.3× more effective\n\nDownload for free: https://devops-research.org/2024-report\n\nYou're receiving this as a subscriber to our research newsletter.",
+    "thread_history": [],
+    "ground_truth_label": "newsletter",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_036",
+    "subject": "Sick leave update — out today and tomorrow",
+    "sender": "nina.volkov@company.com",
+    "timestamp": "2024-01-15T08:15:00Z",
+    "body": "Hi Tom,\n\nJust to let you know, I'm not feeling well and won't be in today or tomorrow. I've let my team know and moved my meetings.\n\nI'll check Slack periodically if anything urgent comes up.\n\nBest,\nNina",
+    "thread_history": [],
+    "ground_truth_label": "normal",
+    "ground_truth_priority": 9,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_037",
+    "subject": "You won a $500 gift card — Survey required",
+    "sender": "rewards@survey-winnerzone.com",
+    "timestamp": "2024-01-15T08:00:00Z",
+    "body": "Congratulations!\n\nYou've been randomly selected to receive a $500 Amazon gift card.\n\nTo claim your reward, simply complete our 5-minute customer satisfaction survey.\n\nClaim here: http://survey-winnerzone.com/claim5\n\nExpires in 24 hours.",
+    "thread_history": [],
+    "ground_truth_label": "spam",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_038",
+    "subject": "RE: Harassment Report — Follow-up Required",
+    "sender": "priya.sharma@company.com",
+    "timestamp": "2024-01-15T14:30:00Z",
+    "body": "Hi,\n\nWe received your report and want to assure you that we take this very seriously. An investigation has been initiated per Policy Section 4.2.\n\nA designated HR investigator will be in touch within 24 hours via the anonymous reporting portal. All information will be kept strictly confidential.\n\nIn the meantime, please document any additional incidents with dates, times, and witnesses.\n\nPriya Sharma\nHR Manager",
+    "thread_history": [
+      "From: anonymous@company-hr-portal.com\nDate: Jan 15, 2024\nSubject: Report of workplace harassment — CONFIDENTIAL\n\nI am submitting an anonymous report of workplace harassment by a senior manager in the Engineering department..."
+    ],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 2,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_039",
+    "subject": "Free AI tools that will 10x your productivity",
+    "sender": "tips@ai-hacks-newsletter.substack.com",
+    "timestamp": "2024-01-15T06:15:00Z",
+    "body": "AI Hacks Weekly — Issue #23\n\nThis week: 7 free AI tools you need to know.\n\n1. Perplexity AI — better than Google for research\n2. Otter.ai — auto-transcribe meetings\n3. Gamma — beautiful AI-generated presentations\n...\n\nRead more: https://ai-hacks-newsletter.substack.com/23\n\nUnsubscribe | Manage newsletters",
+    "thread_history": [],
+    "ground_truth_label": "newsletter",
+    "ground_truth_priority": 10,
+    "task_relevance": [1, 2]
+  },
+  {
+    "id": "email_040",
+    "subject": "Escalation: Payment gateway timeout — affecting 15% of checkouts",
+    "sender": "sre-alerts@company.com",
+    "timestamp": "2024-01-15T13:45:00Z",
+    "body": "P1 INCIDENT — PAYMENT GATEWAY\n\nStarted: 13:38 UTC\nDuration: 7 minutes\nImpact: 15% of checkout attempts timing out\n\nAffected: Stripe integration, EU region only\nError: Gateway timeout after 30s\nEstimated revenue impact: ~$12,000/minute\n\nOn-call SRE: Assigned to @beth-k\nIncident channel: #incident-2024-0115-002\n\nStatus: Investigating. Update in 5 minutes.",
+    "thread_history": [],
+    "ground_truth_label": "urgent",
+    "ground_truth_priority": 1,
+    "task_relevance": [1, 2]
+  }
+]
