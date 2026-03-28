@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt && rm /tmp/requirements.
 
 # Copy source code
 COPY models.py /app/models.py
+COPY inference.py /app/inference.py
 COPY server/ /app/server/
 COPY baseline/ /app/baseline/
 

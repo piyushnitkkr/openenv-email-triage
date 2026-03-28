@@ -148,31 +148,45 @@ def run_baseline_script() -> BaselineResponse:
     import json
     import os
 
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
-        raise HTTPException(status_code=500, detail="OPENAI_API_KEY not set in environment")
-        
+    hf_token = os.environ.get("HF_TOKEN", "")
+    api_base_url = os.environ.get("API_BASE_URL", "https://api.openai.com/v1")
+    model_name = os.environ.get("MODEL_NAME", "gpt-4o")
+
+    if not hf_token:
+        raise HTTPException(status_code=500, detail="HF_TOKEN not set in environment")
+
     try:
-        # Run the baseline script inside a subprocess
+        # Run inference.py (root-level script, required by submission spec)
         result = subprocess.run(
-            [sys.executable, "baseline/run_baseline.py", "--base-url", "http://localhost:8000"],
+            [sys.executable, "inference.py"],
             capture_output=True,
             text=True,
-            timeout=120
+            timeout=1200,  # 20 min limit per spec
+            env={
+                **os.environ,
+                "HF_TOKEN": hf_token,
+                "API_BASE_URL": api_base_url,
+                "MODEL_NAME": model_name,
+                "ENV_BASE_URL": "http://localhost:7860",
+            }
         )
-        
+
         # Read the dumped JSON scores
         if os.path.exists("baseline_results.json"):
             with open("baseline_results.json", "r") as f:
                 data = json.load(f)
             return BaselineResponse(scores=data["scores"], mean_score=data["mean_score"])
         else:
-            raise HTTPException(status_code=500, detail=f"Baseline script failed or produced no output. Stderr: {result.stderr}")
-            
+            raise HTTPException(
+                status_code=500,
+                detail=f"inference.py failed or produced no output.\nStdout: {result.stdout[-500:]}\nStderr: {result.stderr[-500:]}"
+            )
+
     except subprocess.TimeoutExpired:
-        raise HTTPException(status_code=504, detail="Baseline script timed out")
+        raise HTTPException(status_code=504, detail="Inference script timed out (20 min limit)")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 
 
