@@ -113,9 +113,10 @@ def list_tasks() -> dict[str, Any]:
 
 
 @app.post("/reset", response_model=EmailObservation, summary="Start a new episode")
-def reset_episode(request: ResetRequest) -> EmailObservation:
+def reset_episode(request: Optional[ResetRequest] = None) -> EmailObservation:
     try:
-        obs = env.reset(task_id=request.task_id)
+        task_id = request.task_id if request else None
+        obs = env.reset(task_id=task_id)
         return obs
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
