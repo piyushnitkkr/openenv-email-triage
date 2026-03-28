@@ -215,11 +215,11 @@ if __name__ == "__main__":
         sys.exit(1)
 
     tasks = get_tasks()
-    task_map = {t["task_id"]: t.get("description", t["task_id"]) for t in tasks}
+    task_map = {t["id"]: t.get("description", t["id"]) for t in tasks}
 
     results: list[dict] = []
     for task in tasks:
-        result = run_episode(task["task_id"], task_map[task["task_id"]])
+        result = run_episode(task["id"], task_map[task["id"]])
         results.append(result)
 
     # Print summary table
