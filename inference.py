@@ -188,7 +188,7 @@ def run_episode(task_id: str, task_description: str) -> dict[str, Any]:
     episode_score = sum(step_scores) / len(step_scores) if step_scores else 0.0
     return {
         "task_id": task_id,
-        "difficulty": next((t.get("difficulty", "?") for t in tasks if t["task_id"] == task_id), "?"),
+        "difficulty": next((t.get("difficulty", "?") for t in tasks if t["id"] == task_id), "?"),
         "steps": total_steps,
         "episode_score": episode_score,
         "step_scores": step_scores,
