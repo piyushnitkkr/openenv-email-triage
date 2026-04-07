@@ -153,6 +153,7 @@ def run_episode(task_id: str, task_description: str) -> dict[str, Any]:
     print(f"\n{'='*60}")
     print(f"  Task: {task_id.upper()}")
     print(f"{'='*60}")
+    print(f"[START] task={task_id}", flush=True)
 
     obs = reset_env(task_id)
     step_scores: list[float] = []
@@ -184,8 +185,10 @@ def run_episode(task_id: str, task_description: str) -> dict[str, Any]:
         step_scores.append(score)
         total_steps += 1
         print(f"  Score: {score:.3f} | Feedback: {feedback}")
+        print(f"[STEP] step={total_steps} reward={score}", flush=True)
 
     episode_score = sum(step_scores) / len(step_scores) if step_scores else 0.0
+    print(f"[END] task={task_id} score={episode_score} steps={total_steps}", flush=True)
     return {
         "task_id": task_id,
         "difficulty": next((t.get("difficulty", "?") for t in tasks if t["id"] == task_id), "?"),
