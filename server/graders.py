@@ -32,7 +32,7 @@ def grade_classification(action: EmailAction, ground_truth_label: str) -> dict[s
     """
     if not action.label:
         return {
-            "score": 0.0,
+            "score": 0.01,
             "feedback": "No label provided in action.",
             "exact_match": False,
         }
@@ -42,7 +42,7 @@ def grade_classification(action: EmailAction, ground_truth_label: str) -> dict[s
 
     if predicted == truth:
         return {
-            "score": 1.0,
+            "score": 0.99,
             "feedback": f"Correct! Label '{predicted}' matches ground truth.",
             "exact_match": True,
         }
@@ -55,7 +55,7 @@ def grade_classification(action: EmailAction, ground_truth_label: str) -> dict[s
         }
 
     return {
-        "score": 0.0,
+        "score": 0.01,
         "feedback": f"Incorrect: predicted '{predicted}', ground truth is '{truth}'.",
         "exact_match": False,
     }
@@ -120,7 +120,7 @@ def grade_prioritization(action: EmailAction, ground_truth_order: list[str]) -> 
     """
     if not action.priority_order:
         return {
-            "score": 0.0,
+            "score": 0.01,
             "feedback": "No priority_order provided in action.",
             "tau": 0.0,
             "top3_score": 0.0,
@@ -139,7 +139,7 @@ def grade_prioritization(action: EmailAction, ground_truth_order: list[str]) -> 
 
     # Weighted combination: 60% overall tau, 40% top-3 overlap
     score = 0.6 * tau + 0.4 * top3_overlap
-    score = max(0.0, min(1.0, score))
+    score = max(0.01, min(0.99, score))
 
     return {
         "score": round(score, 4),
@@ -218,7 +218,7 @@ def grade_reply(action: EmailAction, rubric: dict[str, dict] | None = None) -> d
 
     if not action.reply_text:
         return {
-            "score": 0.0,
+            "score": 0.01,
             "feedback": "No reply_text provided in action.",
             "criteria_scores": {},
         }
@@ -253,7 +253,7 @@ def grade_reply(action: EmailAction, rubric: dict[str, dict] | None = None) -> d
                 criteria_scores[criterion] = 0.0
                 feedback_parts.append(f"✗ [{criterion}]: no keywords found (expected one of {keywords[:3]})")
 
-    score = max(0.0, min(1.0, total_score))
+    score = max(0.01, min(0.99, total_score))
 
     return {
         "score": round(score, 4),
