@@ -111,7 +111,7 @@ class EmailEnvironment:
         # ---- Validate action type ----
         if action.action_type != self._task.required_action_type:
             reward = EmailReward(
-                score=0.0,
+                score=0.01,
                 feedback=(
                     f"Wrong action type '{action.action_type}'. "
                     f"Task '{self._task.task_id}' requires '{self._task.required_action_type}'."
@@ -131,7 +131,7 @@ class EmailEnvironment:
         action_signature = self._action_signature(action)
         if action_signature in self._action_history:
             reward = EmailReward(
-                score=0.0,
+                score=0.01,
                 feedback="Penalty: identical action submitted twice. Try a different approach.",
                 done=False,
             )
@@ -278,7 +278,7 @@ class EmailEnvironment:
                 email = self._email_queue[step]
                 ground_truth_label = self._task.ground_truth.get(email["id"], "normal")  # type: ignore[union-attr]
                 return grade_classification(action, ground_truth_label)
-            return {"score": 0.0, "feedback": "No email to classify."}
+            return {"score": 0.01, "feedback": "No email to classify."}
 
         elif task_id == "prioritize":
             return grade_prioritization(action, self._task.ground_truth)  # type: ignore[union-attr]
@@ -286,12 +286,12 @@ class EmailEnvironment:
         elif task_id == "reply":
             return grade_reply(action, BILLING_DISPUTE_RUBRIC)
 
-        return {"score": 0.0, "feedback": f"Unknown task '{task_id}'."}
+        return {"score": 0.01, "feedback": f"Unknown task '{task_id}'."}
 
     def _compute_episode_score(self) -> float:
         """Compute the final episode score as mean of step scores."""
         if not self._state or not self._state.step_scores:
-            return 0.0
+            return 0.01
         return round(sum(self._state.step_scores) / len(self._state.step_scores), 4)
 
     @staticmethod

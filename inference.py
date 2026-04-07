@@ -187,7 +187,7 @@ def run_episode(task_id: str, task_description: str) -> dict[str, Any]:
         print(f"  Score: {score:.3f} | Feedback: {feedback}")
         print(f"[STEP] step={total_steps} reward={score}", flush=True)
 
-    episode_score = sum(step_scores) / len(step_scores) if step_scores else 0.0
+    episode_score = sum(step_scores) / len(step_scores) if step_scores else 0.01
     print(f"[END] task={task_id} score={episode_score} steps={total_steps}", flush=True)
     return {
         "task_id": task_id,
